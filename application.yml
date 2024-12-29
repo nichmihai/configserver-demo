@@ -1,11 +1,10 @@
 server:
-  port: 8082
+  port: 8083
 
 spring:
-  profiles:
-    active: native
-management:
-  endpoints:
-    web:
-      exposure:
-        include: "*"
+  cloud:
+    config:
+      server:
+        git:
+          uri: https://github.com/nichmihai/configserver-demo.git
+          search-paths: config
